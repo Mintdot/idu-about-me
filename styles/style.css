@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Moirai+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* header */
+nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  float: left;
+  margin: 2rem 2rem;
+}
+
+nav ul li a {
+  transition: all 0.5s;
+}
+
+nav ul li a::after{
+  content: "";
+  display: block;
+  position: relative;
+  left: 50%;
+  width: 0;
+  border-bottom: 1px solid black;
+  transition: all 0.5s;
+}
+
+nav ul li a:hover {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+nav >ul >li>a:hover::after{
+  left: 0%;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+/* main */
+section {
+  height: 100vh;
+}
+
+#home {
+  background-color: #2a9d8f;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title h1 {
+  margin-bottom: 1rem;
+  visibility: hidden;
+  white-space: nowrap;
+  font-family: "Moirai One", sans-serif;
+  font-size: 3rem;
+}
+
+.title h1::before {
+  content: "Hello, World!";
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-right: 5px;
+  animation: typing 3s steps(30), blinking 1s 2s infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+    border-right: 1px solid black;
+    border-right-width: 50%;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+@keyframes blinking {
+  50% {
+    border-right: 1px solid black;
+  }
+}
+
+.play {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  width: 7rem;
+  height: 3rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  transition: all 1s;
+}
+
+.play::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
+  border-left: 1.5rem solid black;
+  transition: all 1s;
+}
+
+.play:hover {
+  background-color: black;
+}
+
+.play:hover::before {
+  border-top: 0.75rem solid transparent;
+  border-bottom: 0.75rem solid transparent;
+  border-left: 1.5rem solid #2a9d8f;
+}
+
+#about {
+  background-color: #e9c46a;
+}
+
+#favorite {
+  background-color: #f4a261;
+}
+
+#contact {
+  background-color: #e76f51;
+}
