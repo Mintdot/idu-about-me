@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Moirai+One&display=swap");
 
+@media screen and (min-width: 2500px) {
+  :root {
+    font-size: 1.33rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  list-style: none;
   color: white;
 }
 
@@ -21,6 +26,10 @@ html::-webkit-scrollbar {
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
 /* header */
@@ -119,13 +128,13 @@ section {
   background-size: cover;
 }
 
-.information {
+.about-container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-1rem, -50%);
-  width: 50rem;
-  height: 50rem;
+  width: 40rem;
+  height: 40rem;
   padding: 2rem;
   border: 1px solid white;
   border-radius: 1rem;
@@ -134,29 +143,28 @@ section {
   font-size: 2rem;
 }
 
-.information-text-wrap {
+.about-text {
+  display: flex;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 36.6rem;
+  white-space: nowrap;
 }
 
-.information-text-wrap > ul {
-  float: left;
+.about-text > ul > li {
+  margin-top: 2rem;
 }
 
-.information-text-wrap > ul > li:nth-child(1) {
+.about-text > ul > li:nth-child(1) {
   margin-top: 0;
 }
 
-.information-key > li {
-  margin-right: 2rem;
-  margin-top: 2rem;
+.about-text-key > li {
+  padding-right: 2rem;
 }
 
-.information-value > li {
-  margin-top: 2rem;
+.about-text-value > li {
   padding-left: 2rem;
   border-left: 1px solid white;
 }
@@ -164,6 +172,85 @@ section {
 #favorite {
   position: relative;
   background-color: #333333;
+}
+
+.favorite-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.favorite-container > h1 {
+  position: absolute;
+  left: 50%;
+  top: -3rem;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+.favorite-wrap {
+  position: relative;
+  margin: 2rem;
+}
+
+.favorite-wrap > .img {
+  cursor: pointer;
+}
+
+.favorite-wrap > .img > img {
+  width: 25rem;
+  border: 7px solid #555;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.favorite-wrap > .img > p {
+  visibility: hidden;
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  font-size: 2rem;
+  opacity: 0;
+  transition: all 1s;
+}
+
+.favorite-wrap > .img:hover p {
+  visibility: visible;
+  opacity: 1;
+}
+
+.favorite-wrap > .img::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.favorite-wrap > .img:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.favorite-wrap > .img::after {
+  content: "";
+  visibility: hidden;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 0;
+  height: 0;
+  border-right: 1px solid white;
+  border-top: 1px solid white;
+  transition: all 0.5s;
+}
+
+.favorite-wrap > .img:hover::after {
+  visibility: visible;
+  width: 50px;
+  height: 50px;
 }
 
 #contact {
@@ -175,7 +262,7 @@ section {
   position: absolute;
   left: 50%;
   bottom: 3rem;
-  transform: translate(-50%);
+  transform: translateX(-50%);
   width: 2rem;
   height: 3rem;
   margin-left: -1rem;
