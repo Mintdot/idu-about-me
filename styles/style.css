@@ -132,7 +132,7 @@ section {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-1rem, -50%);
+  transform: translateY(-50%);
   width: 40rem;
   height: 40rem;
   padding: 2rem;
@@ -339,7 +339,6 @@ section {
   transform: translateX(-50%);
   width: 2rem;
   height: 3rem;
-  margin-left: -1rem;
   border: 2px solid white;
   border-radius: 3rem;
   transition: all 1s;
