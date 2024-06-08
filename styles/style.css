@@ -254,7 +254,81 @@ section {
 }
 
 #contact {
+  position: relative;
   background-color: #555555;
+}
+
+.contact-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contact-container > h1 {
+  position: absolute;
+  left: 50%;
+  top: -5rem;
+  transform: translateX(-50%);
+  font-size: 2rem;
+}
+
+.contact-wrap {
+  position: relative;
+  margin: 3rem;
+}
+
+.contact-wrap > .img > img {
+  position: relative;
+  top: 0;
+  width: 5rem;
+  transition: all 0.5s;
+}
+
+.contact-wrap > .img:hover img {
+  top: -0.5rem;
+  width: 5rem;
+}
+
+.contact-wrap > .img > p {
+  visibility: hidden;
+  border: 5px solid white;
+  background-color: white;
+  font-weight: 700;
+  color: #555;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.contact-wrap > .img:hover p {
+  visibility: visible;
+  opacity: 1;
+}
+
+.scroll-top > a {
+  position: absolute;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid white;
+  border-radius: 100%;
+}
+
+.scroll-top > a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-left: 3px solid white;
+  border-top: 3px solid white;
 }
 
 /* scroll button */
