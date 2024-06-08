@@ -124,7 +124,7 @@ section {
 
 #about {
   position: relative;
-  background-image: url(/images/profile.jpg);
+  background-image: url(../images/profile.jpg);
   background-size: cover;
 }
 
